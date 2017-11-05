@@ -1,0 +1,4 @@
+{
+  "herokuApi": "https://snugbackend.herokuapp.com",
+  "localApi": "http://0.0.0.0:5000"
+}

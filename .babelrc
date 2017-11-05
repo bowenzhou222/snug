@@ -1,0 +1,13 @@
+{
+  "presets" : ["es2015", "react"],
+  "plugins": [
+    ["module-resolver", {
+      "alias": {
+        "reducers": "./src/client/reducers/reducers.js",
+        "app": "./src/client/app",
+        "blueprint": "./src/client/blueprint.js",
+        "config": "./src/client/config.json",
+      }
+  	}]
+  ]
+}
