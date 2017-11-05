@@ -39259,7 +39259,9 @@ var Ideas = function (_React$Component) {
           },
           _react2.default.createElement(
             _reactStickynode2.default,
-            null,
+            {
+              innerZ: 100
+            },
             _react2.default.createElement(
               'div',
               {

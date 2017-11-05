@@ -43,7 +43,9 @@ class Ideas extends React.Component {
             height: '100px',
           }}
         >
-          <Sticky>
+          <Sticky
+            innerZ={100}
+          >
             <div
               style={{
                 display: 'flex',
