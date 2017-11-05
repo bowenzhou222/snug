@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getNewideas, updateIdea, deleteIdea } from '../ideas/ideasActions';
+import { getNewideas, updateIdea, deleteIdea, removeNotification } from '../ideas/ideasActions';
 
 const mapStateToProps = (state) => {
   const newState = {
@@ -15,7 +15,11 @@ const mapDispatchToProps = dispatch => ({
 
   deleteIdea: (id) => {
     dispatch(deleteIdea(id));
-  }
+  },
+
+  removeNotification: () => {
+    dispatch(removeNotification());
+  },
 });
 
 const ideaContainer = connect(

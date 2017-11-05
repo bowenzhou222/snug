@@ -6,8 +6,43 @@ export const GET_IDEAS = 'GET_IDEAS';
 export const GET_NEW_IDEA = 'GET_NEW_IDEA';
 export const UPDATE_NEW_IDEA = 'UPDATE_NEW_IDEA';
 export const DELETE_IDEA = 'DELETE_IDEA';
+export const SORT = 'SORT';
+export const REMOVE_NOTIFICATION = 'REMOVE_NOTIFICATION';
 
-const api = config.localApi;
+const api = config.herokuApi;
+
+
+export async function fetchLocalSortType() {
+  let sortType = await localStorage.getItem('sortType');
+  if (sortType === null) {
+    sortType = 'title';
+  }
+  return sortType;
+}
+
+export function initSortType() {
+  return (dispatch) => {
+    fetchLocalSortType().then((sortType) => {
+      dispatch({
+        type: SORT,
+        sortType: sortType,
+      });
+    });
+  };
+}
+
+export function changeSortType(sortType) {
+  return (dispatch) => {
+    dispatch({
+      type: SORT,
+      sortType: sortType,
+    });
+  };
+}
+
+export function setLocalSortType(sortType) {
+  localStorage.setItem('sortType', sortType);
+}
 
 export function getIdeas() {
   return async (dispatch) => {
@@ -54,7 +89,6 @@ export function updateIdea(id, title, body) {
         return response.json();
       })
       .then((json) => {
-        console.log(json);
         dispatch({
           type: UPDATE_NEW_IDEA,
           json: json,
@@ -83,4 +117,12 @@ export function deleteIdea(id) {
         });
       });
   }; 
+}
+
+export function removeNotification() {
+  return (dispatch) => {
+    dispatch({
+      type: REMOVE_NOTIFICATION,
+    });
+  };
 }
