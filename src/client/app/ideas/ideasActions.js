@@ -7,7 +7,7 @@ export const GET_NEW_IDEA = 'GET_NEW_IDEA';
 export const UPDATE_NEW_IDEA = 'UPDATE_NEW_IDEA';
 export const DELETE_IDEA = 'DELETE_IDEA';
 
-const api = config.herokuApi;
+const api = config.localApi;
 
 export function getIdeas() {
   return async (dispatch) => {

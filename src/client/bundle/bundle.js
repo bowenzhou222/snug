@@ -4657,7 +4657,7 @@ var GET_NEW_IDEA = exports.GET_NEW_IDEA = 'GET_NEW_IDEA';
 var UPDATE_NEW_IDEA = exports.UPDATE_NEW_IDEA = 'UPDATE_NEW_IDEA';
 var DELETE_IDEA = exports.DELETE_IDEA = 'DELETE_IDEA';
 
-var api = _config2.default.herokuApi;
+var api = _config2.default.localApi;
 
 function getIdeas() {
   return async function (dispatch) {
@@ -36859,7 +36859,7 @@ var Ideas = function (_React$Component) {
       var ideas = this.props.ideas;
       var Idea = _blueprint2.default.idea;
       var focusedIdea = this.props.focusedIdea;
-      console.log(ideas);
+      console.log(focusedIdea);
       return _react2.default.createElement(
         'div',
         {
@@ -36923,7 +36923,6 @@ var Ideas = function (_React$Component) {
 
 Ideas.propTypes = {
   ideas: _propTypes2.default.array
-
 };
 
 exports.default = Ideas;
@@ -44381,7 +44380,7 @@ var Idea = function (_React$Component) {
           id: this.props.id.toString(),
           underlineShow: false,
           multiLine: true,
-          ref: this.props.focusedIdea === this.props.id ? focuseTitle : null,
+          ref: this.props.focused === true ? focuseTitle : null,
           onFocus: this.titleOnFocus,
           onChange: this.changeTitle,
           onBlur: this.titleOnBlur
@@ -44425,7 +44424,6 @@ Idea.propTypes = {
   createdDate: _propTypes2.default.string,
   title: _propTypes2.default.string,
   body: _propTypes2.default.string,
-  focusedIdea: _propTypes2.default.number,
   updateIdea: _propTypes2.default.func,
   deleteIdea: _propTypes2.default.func
 };

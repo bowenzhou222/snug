@@ -22,7 +22,7 @@ class Ideas extends React.Component {
     const ideas = this.props.ideas;
     const Idea = blueprint.idea;
     const focusedIdea = this.props.focusedIdea;
-    console.log(ideas);
+    console.log(focusedIdea);
     return (
       <div
         style={{
@@ -77,7 +77,6 @@ class Ideas extends React.Component {
 
 Ideas.propTypes = {
   ideas: PropTypes.array,
-
 };
 
 export default Ideas;

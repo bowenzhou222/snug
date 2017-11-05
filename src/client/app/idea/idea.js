@@ -100,7 +100,7 @@ class Idea extends React.Component {
           id={this.props.id.toString()}
           underlineShow={false}
           multiLine={true}
-          ref={this.props.focusedIdea === this.props.id ? focuseTitle : null}
+          ref={this.props.focused === true ? focuseTitle : null}
           onFocus={this.titleOnFocus}
           onChange={this.changeTitle}
           onBlur={this.titleOnBlur}
@@ -140,7 +140,6 @@ Idea.propTypes = {
   createdDate: PropTypes.string,
   title: PropTypes.string,
   body: PropTypes.string,
-  focusedIdea: PropTypes.number,
   updateIdea: PropTypes.func,
   deleteIdea: PropTypes.func,
 };
